@@ -1,0 +1,41 @@
+:root {
+  --primary-1: #00ddaf;
+  --gray-1: #838e9e;
+  --gray-h-2: #243752;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: white;
+  color: black;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+.teacher-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
