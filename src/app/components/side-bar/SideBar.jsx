@@ -91,7 +91,9 @@ const SideBar = () => {
           />
           <Link href="/feedbacks">Feedbacks</Link>
         </li>
-        <li className={`link ${isActive(`/${locale}/tickets`) ? "active" : ""}`}>
+        <li
+          className={`link ${isActive(`/${locale}/tickets`) ? "active" : ""}`}
+        >
           <Image
             src={isActive(`/${locale}/tickets`) ? whiteSms : sms}
             alt="Picture of the author"
@@ -111,7 +113,9 @@ const SideBar = () => {
           />
           <Link href="/payments">Payment</Link>
         </li>
-        <li className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}>
+        <li
+          className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}
+        >
           <Image
             src={isActive(`/${locale}/courses`) ? whiteCourses : courses}
             alt="Picture of the author"
@@ -120,7 +124,9 @@ const SideBar = () => {
           />
           <Link href="/courses">Courses</Link>
         </li>
-        <li className={`link ${isActive(`/${locale}/profile`) ? "active" : ""}`}>
+        <li
+          className={`link ${isActive(`/${locale}/profile`) ? "active" : ""}`}
+        >
           <Image
             src={isActive(`/${locale}/profile`) ? whiteProfile : profile}
             alt="Picture of the author"
