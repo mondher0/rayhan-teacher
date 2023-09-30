@@ -1,0 +1,80 @@
+.student-by-sex {
+  height: 569px;
+  width: 343px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.student-by-sex .student-by-sex-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.student-by-sex .student-by-sex-title {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.14px;
+}
+.student-by-sex .boys,
+.student-by-sex .girls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.student-by-sex .boys .color-boys {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: #a6acbe;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+.student-by-sex .boys .color-boys div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #52b6ff;
+}
+.student-by-sex .girls .color-girls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: #a6acbe;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+.student-by-sex .girls .color-girls div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ed52af;
+}
+.student-by-sex .girls span,
+.student-by-sex .boys span {
+  color: #000;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
+  letter-spacing: 0.14px;
+}

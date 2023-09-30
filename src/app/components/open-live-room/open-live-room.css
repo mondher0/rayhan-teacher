@@ -1,0 +1,21 @@
+.open-new {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 395px;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fff;
+  padding: 20px;
+  gap: 20px;
+  border: 2px solid #ededf6;
+  height: 151px;
+}
+.open-new p {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.288px;
+}

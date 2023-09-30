@@ -1,0 +1,112 @@
+.login-nav {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px !important;
+  position: relative;
+}
+.login-nav .user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.login-nav .user-info .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+}
+.login-nav .user-info .text .name {
+  color: #000;
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+.login-nav .user-info .text .job {
+  color: var(--gray-1);
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.12px;
+}
+.nav-reversed {
+  flex-direction: row-reverse;
+}
+.divider {
+  width: 1px;
+  height: 64px;
+  background: #cdd2d8;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 17.423px;
+  padding: 40px;
+}
+.nav-bar-reversed {
+  flex-direction: row-reverse;
+}
+nav .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+.dow {
+  display: none;
+}
+nav .reversed {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+nav .nav-btns {
+  display: flex;
+  gap: 5px;
+}
+nav .nav-btns .outline,
+nav .nav-btns .inline {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.288px;
+  background-color: white;
+  padding: 13px 20px;
+  color: var(--primary900);
+  border-radius: 16px;
+  border: 2px solid var(--primary900);
+  transition: all 0.3s ease-in-out;
+}
+nav .nav-btns .outline {
+  background-color: transparent;
+  color: var(--primary900);
+}
+nav .nav-btns .inline {
+  background-color: var(--primary900);
+  color: white;
+}
+
+nav .nav-btns .outline:hover {
+  /* background-color: var(--primary900);
+  color: white; */
+  cursor: pointer;
+}
+nav .nav-btns .inline:hover {
+  /* background-color: transparent;
+  color: var(--primary900); */
+  cursor: pointer;
+}

@@ -17,32 +17,36 @@ import whiteSms from "./white-sms.svg";
 import whiteCourses from "./white-courses.svg";
 import whiteProfile from "./white-profile.svg";
 import whitePayment from "./white-payment.svg";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { AiOutlineLike } from "react-icons/ai";
+import notification from "./notification.svg";
+import whiteNotification from "./white-notification.svg";
+import like from "./like.svg";
+import whiteLike from "./white-like.svg";
 import { usePathname } from "next/navigation"; // Import useRouter
+import { useLocale } from "next-intl";
 
 const SideBar = () => {
   const path = usePathname();
   console.log("-----------------router", path);
+  const locale = useLocale();
 
   // Define a function to check if a link is active
-  const isActive = (href) => path.includes(href);
+  const isActive = (href) => path === href;
   return (
     <aside className="side-bar">
       <Logo />
       <ul className="links">
-        <li className={`link ${isActive("/") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}`) ? "active" : ""}`}>
           <Image
-            src={isActive("/") ? activity : unselectedActivity}
+            src={isActive(`/${locale}`) ? activity : unselectedActivity}
             alt="Picture of the author"
             width={20}
             height={20}
           />
           <Link href="/">Dashboard</Link>
         </li>
-        <li className={`link ${isActive("/lives") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}/lives`) ? "active" : ""}`}>
           <Image
-            src={isActive("/lives") ? whiteLives : live}
+            src={isActive(`/${locale}/lives`) ? whiteLives : live}
             alt="Picture of the author"
             width={20}
             height={20}
@@ -50,59 +54,75 @@ const SideBar = () => {
           />
           <Link href="/lives">Lives</Link>
         </li>
-        <li className={`link ${isActive("/rooms") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}/rooms`) ? "active" : ""}`}>
           <Image
-            src={isActive("/rooms") ? whiteRooms : rooms}
+            src={isActive(`/${locale}/rooms`) ? whiteRooms : rooms}
             alt="Picture of the author"
             width={20}
             height={20}
           />
           <Link href="/rooms">Rooms</Link>
         </li>
-        <li className={`link ${isActive("/notifications") ? "active" : ""}`}>
-          <IoIosNotificationsOutline
-            size={20}
-            color={isActive("/notifications") ? "#fff" : "#838E9E"}
+        <li
+          className={`link ${
+            isActive(`/${locale}/notifications`) ? "active" : ""
+          }`}
+        >
+          <Image
+            src={
+              isActive(`/${locale}/notifications`)
+                ? whiteNotification
+                : notification
+            }
+            alt="Picture of the author"
+            width={20}
+            height={20}
           />
           <Link href="/notifications">Notifications</Link>
         </li>
-        <li className={`link ${isActive("/feedbacks") ? "active" : ""}`}>
-          <AiOutlineLike
-            size={20}
-            color={isActive("/feedbacks") ? "#fff" : "#838E9E"}
+        <li
+          className={`link ${isActive(`/${locale}/feedbacks`) ? "active" : ""}`}
+        >
+          <Image
+            src={isActive(`/${locale}/feedbacks`) ? whiteLike : like}
+            alt="Picture of the author"
+            width={20}
+            height={20}
           />
           <Link href="/feedbacks">Feedbacks</Link>
         </li>
-        <li className={`link ${isActive("/tickets") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}/tickets`) ? "active" : ""}`}>
           <Image
-            src={isActive("/tickets") ? whiteSms : sms}
+            src={isActive(`/${locale}/tickets`) ? whiteSms : sms}
             alt="Picture of the author"
             width={20}
             height={20}
           />
-          <Link href="/payment">Tickets</Link>
+          <Link href="/tickets">Tickets</Link>
         </li>
-        <li className={`link ${isActive("/payment") ? "active" : ""}`}>
+        <li
+          className={`link ${isActive(`/${locale}/payments`) ? "active" : ""}`}
+        >
           <Image
-            src={isActive("/payment") ? whitePayment : payment}
+            src={isActive(`/${locale}/payment`) ? whitePayment : payment}
             alt="Picture of the author"
             width={20}
             height={20}
           />
-          <Link href="/payment">Payment</Link>
+          <Link href="/payments">Payment</Link>
         </li>
-        <li className={`link ${isActive("/courses") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}>
           <Image
-            src={isActive("/courses") ? whiteCourses : courses}
+            src={isActive(`/${locale}/courses`) ? whiteCourses : courses}
             alt="Picture of the author"
             width={20}
             height={20}
           />
           <Link href="/courses">Courses</Link>
         </li>
-        <li className={`link ${isActive("/profile") ? "active" : ""}`}>
+        <li className={`link ${isActive(`/${locale}/profile`) ? "active" : ""}`}>
           <Image
-            src={isActive("/profile") ? whiteProfile : profile}
+            src={isActive(`/${locale}/profile`) ? whiteProfile : profile}
             alt="Picture of the author"
             width={20}
             height={20}

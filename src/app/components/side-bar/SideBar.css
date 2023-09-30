@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   padding: 20px;
   height: 100vh;
 }
@@ -50,7 +49,6 @@
 }
 @media screen and (max-width: 1700px) {
   .side-bar {
-    width: 300px;
     overflow-y: scroll;
   }
 }

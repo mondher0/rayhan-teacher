@@ -3,6 +3,7 @@ import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import SideBar from "../components/side-bar/SideBar";
+import NavBar from "../components/nav-bar/NavBar";
 
 export const metadata = {
   title: "Rayhan-teacher",
@@ -28,7 +29,10 @@ export default async function RootLayout({ children, params }) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="teacher-container">
             <SideBar />
-            {children}
+            <div className="page-content">
+              <NavBar />
+              {children}
+            </div>
           </div>
         </NextIntlClientProvider>
       </body>

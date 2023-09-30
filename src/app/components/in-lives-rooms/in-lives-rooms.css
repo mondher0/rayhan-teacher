@@ -1,0 +1,50 @@
+.in-live-room {
+  border-radius: 10px;
+  background: #fff;
+  height: 569px;
+  width: 1161px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+  overflow-y: scroll;
+}
+.in-live-room .in-live-room-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.in-live-room .in-live-room-title .text {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.14px;
+}
+.in-live-room .in-live-room-title .block {
+  color: #a6acbe;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: 0.14px;
+}
+.in-live-room .students {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (max-width: 1500px) {
+  .in-live-room {
+    width: 100%;
+  }
+}
