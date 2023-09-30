@@ -1,0 +1,36 @@
+.payment-container {
+  height: fit-content;
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1.285px solid #dbdade;
+}
+.payment-container .payment-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--gray-h-3);
+  padding: 20px;
+}
+.payment-container .payment-title p {
+  color: #4b465c;
+  font-size: 16.709px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.285px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.payment-container .payment-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}

@@ -106,12 +106,12 @@ const SideBar = () => {
           className={`link ${isActive(`/${locale}/payments`) ? "active" : ""}`}
         >
           <Image
-            src={isActive(`/${locale}/payment`) ? whitePayment : payment}
+            src={isActive(`/${locale}/payments`) ? whitePayment : payment}
             alt="Picture of the author"
             width={20}
             height={20}
           />
-          <Link href="/payments">Payment</Link>
+          <Link href="/payments?page=1">Payment</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}
