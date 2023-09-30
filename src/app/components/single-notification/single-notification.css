@@ -1,0 +1,31 @@
+.single-notification {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+.single-notification .not-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.single-notification .not-text .not {
+  color: #41475e;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30.6px;
+  letter-spacing: 0.51px;
+}
+.single-notification .not-time {
+  color: #41475e;
+  font-size: 20.4px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20.4px; /* 100% */
+  letter-spacing: 0.51px;
+  opacity: 0.5;
+}
