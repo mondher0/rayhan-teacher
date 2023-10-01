@@ -54,7 +54,7 @@
     "lastName": "Nom de famille",
     "email": "Email",
     "fonction": "Fonction/Spécialisation",
-    "percentage": "Pourcentage",
+    "pourcentage": "Pourcentage",
     "permissions": "Permissions"
   }
 }
