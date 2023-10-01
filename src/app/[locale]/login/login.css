@@ -1,0 +1,195 @@
+.main-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.login-form-ar {
+  align-items: flex-end;
+}
+.login-form .welcome {
+  color: #12224F;
+  font-size: 24.603px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.login-form .title {
+  font-size: 46.13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: #12224F;
+  margin-bottom: 0;
+}
+.login-form .form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login-form .form-control-ar {
+  align-items: flex-end;
+}
+.login-form .form-control label {
+  font-size: 23.06px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--gray800);
+  margin-top: 30px;
+}
+.login-form .form-control .input-control {
+  width: 504.435px;
+  padding: 20px;
+  outline: none;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #092674;
+  font-size: 18.49px;
+  margin-top: 10px;
+}
+.remember-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.remember-me label {
+  color: #2d3748;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.or {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.or .or-text {
+  color: #70747e;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.forgot-password {
+  color: #003f90;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+.forgot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.forgot-ar {
+  flex-direction: row-reverse;
+}
+.remember-me-ar {
+  flex-direction: row-reverse;
+}
+.login-with {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.form-control-btn {
+  width: 504.435px;
+  padding: 20px;
+  outline: none;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background-color: #092674;
+  color: white;
+  font-size: 23.06px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  margin-top: 20px;
+}
+.dont-have-account {
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--gray800);
+  margin-top: 10px;
+}
+.dont-have-account .go-to-register {
+  text-decoration-line: underline;
+  color: #092674;
+  font-weight: bold;
+}
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.input-container .form-half-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.input-container .form-half-control-ar {
+  align-items: flex-end;
+}
+.input-container .form-half-control input {
+  width: 250px;
+  padding: 20px;
+  outline: none;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #092674;
+  font-size: 18.49px;
+  margin-top: 10px;
+}
+.input-container .form-half-control label {
+  font-size: 23.06px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--gray800);
+  margin-top: 30px;
+}
+.terms {
+  color: #092674;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 120%;
+}
+@media screen and (max-width: 1400px) {
+  .login-form {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+  .login-form .title {
+    font-size: 36.13px;
+  }
+  .login-image {
+    width: 600px;
+    height: 600px;
+  }
+}
