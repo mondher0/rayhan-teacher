@@ -43,7 +43,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/">{t("dashboard")}</Link>
+          <Link href={`/${locale}`}>{t("dashboard")}</Link>
         </li>
         <li className={`link ${isActive(`/${locale}/lives`) ? "active" : ""}`}>
           <Image
@@ -53,7 +53,7 @@ const SideBar = () => {
             height={20}
             className="test"
           />
-          <Link href="/lives">{t("lives")}</Link>
+          <Link href={`/${locale}/lives`}>{t("lives")}</Link>
         </li>
         <li className={`link ${isActive(`/${locale}/rooms`) ? "active" : ""}`}>
           <Image
@@ -62,7 +62,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/rooms">{t("rooms")}</Link>
+          <Link href={`/${locale}/rooms`}>{t("rooms")}</Link>
         </li>
         <li
           className={`link ${
@@ -79,7 +79,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/notifications">{t("notifications")}</Link>
+          <Link href={`/${locale}/notifications`}>{t("notifications")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/feedbacks`) ? "active" : ""}`}
@@ -90,7 +90,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/feedbacks">{t("feedbacks")}</Link>
+          <Link href={`/${locale}/feedbacks`}>{t("feedbacks")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/tickets`) ? "active" : ""}`}
@@ -101,7 +101,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/tickets?page=1">{t("tickets")}</Link>
+          <Link href={`/${locale}/tickets?page=1`}>{t("tickets")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/payments`) ? "active" : ""}`}
@@ -112,7 +112,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/payments?page=1">{t("payments")}</Link>
+          <Link href={`/${locale}/payments?page=1`}>{t("payments")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}
@@ -123,7 +123,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/courses?page=1">{t("courses")}</Link>
+          <Link href={`/${locale}/courses?page=1`}>{t("courses")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/profile`) ? "active" : ""}`}
@@ -134,7 +134,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/profile">{t("profile")}</Link>
+          <Link href={`/${locale}/profile`}>{t("profile")}</Link>
         </li>
       </ul>
     </aside>
