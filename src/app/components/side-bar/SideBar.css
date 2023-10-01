@@ -8,6 +8,7 @@
   align-items: center;
   padding: 20px;
   height: 100vh;
+  overflow: auto;
 }
 .side-bar .links {
   display: flex;
@@ -46,9 +47,4 @@
   border-radius: 12px;
   background: var(--primary-1);
   color: white;
-}
-@media screen and (max-width: 1700px) {
-  .side-bar {
-    overflow-y: scroll;
-  }
 }

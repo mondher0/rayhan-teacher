@@ -1,0 +1,52 @@
+.objet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.objet .text {
+  color: #4b465c;
+  font-size: 19.279px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28.276px; /* 146.667% */
+}
+.objet .type {
+  color: #4b465c;
+  font-size: 16.709px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.706px; /* 153.846% */
+}
+.status {
+  border-radius: 5.141px;
+  background: rgba(229, 69, 69, 0.16);
+  display: flex;
+  width: 133.67px;
+  padding: 6.426px 12.853px;
+  justify-content: center;
+  align-items: center;
+  gap: 12.853px;
+  flex-shrink: 0;
+  margin: auto;
+  color: #e54545;
+  font-size: 16.709px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 17.994px; /* 107.692% */
+}
+.course-title {
+  color: #4b465c;
+  font-size: 19.279px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28.276px; /* 146.667% */
+}
+.date {
+  color: #4b465c;
+  font-size: 19.279px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28.276px; /* 146.667% */
+}

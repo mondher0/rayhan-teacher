@@ -100,7 +100,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/tickets">Tickets</Link>
+          <Link href="/tickets?page=1">Tickets</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/payments`) ? "active" : ""}`}

@@ -1,0 +1,79 @@
+.add-ticket {
+  height: 700px;
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px;
+}
+.add-ticket form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+.add-ticket form .form-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+}
+.add-ticket form .form-control .input-control,
+.add-ticket form .input-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+.add-ticket form .form-control .input-control label,
+.add-ticket form .input-control label {
+  color: var(--secondary-h-4);
+  font-size: 18.754px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.921px;
+}
+.add-ticket form .form-control .input-control input,
+.add-ticket form .form-control .input-control select,
+.add-ticket form textarea {
+  border-radius: 8.335px;
+  border: 1.042px solid #dbdade;
+  background: #fff;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  font-size: 20px;
+}
+.btn {
+  display: inline-flex;
+  padding: 14px 32px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--secondary-1);
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}

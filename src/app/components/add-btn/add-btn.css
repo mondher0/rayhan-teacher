@@ -1,0 +1,23 @@
+.add-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.add-btn button {
+  display: inline-flex;
+  padding: 14px 32px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--secondary-1);
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
