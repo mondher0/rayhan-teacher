@@ -1,0 +1,52 @@
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+  background: #f9fafb;
+}
+.table thead {
+  border: 1.285px solid #dbdade;
+  background: var(--gray-h-3);
+  border-radius: 20px 20px 0px 0px !important;
+}
+.table tbody {
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+.table tr {
+  border-radius: 20px 20px 0px 0px !important;
+  margin-bottom: 20px;
+}
+
+.table th {
+  color: #4b465c;
+  font-size: 16.709px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.285px;
+  text-transform: uppercase;
+  padding: 20px;
+}
+.table tbody tr {
+  color: #4b465c;
+  font-size: 19.279px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28.276px; /* 146.667% */
+}
+.table td {
+  color: #232d42;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+  text-align: center;
+}
+.table tbody tr td .course-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

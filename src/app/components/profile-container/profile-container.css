@@ -1,0 +1,93 @@
+.profile-container {
+  height: 700px;
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px;
+}
+.profile-container .profile-title {
+  color: var(--secondary-h-4);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.288px;
+}
+.profile-container .profile-pictures {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.profile-container .profile-pictures .profile-img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.profile-container .profile-pictures .profile-img .name {
+  color: #000;
+  text-align: right;
+  font-size: 22.83px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.228px;
+}
+.profile-container .profile-pictures .profile-img .job {
+  color: var(--gray-1);
+  text-align: right;
+  font-size: 19.569px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.196px;
+}
+.profile-container .profile-data {
+  width: 100%;
+  margin-top: 20px;
+}
+.profile-container .profile-data form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.profile-container .profile-data form .form-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+}
+.profile-container .profile-data form .form-control .half-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+.profile-container .profile-data form .form-control .half-input label {
+  color: var(--gray-h-2);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.profile-container .profile-data form .form-control .half-input input {
+  border: 1px solid #838e9e;
+  border-radius: 7.936px;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  font-size: 20px;
+}
