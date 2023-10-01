@@ -2,16 +2,18 @@ import "../table-component/table-component.css";
 import design from "../../atoms/assets/design.png";
 import Image from "next/image";
 import "./tickets-table.css";
+import { useTranslations } from "next-intl";
 
 const TicketsTable = () => {
+  const t = useTranslations("Index");
   return (
     <table className="table">
       <thead>
         <tr>
-          <th>Billets</th>
-          <th>Object de billet</th>
-          <th>Statut</th>
-          <th>DERNIÈRE MISE À JOUR</th>
+          <th>{t("ticket")}</th>
+          <th>{t("subject")}</th>
+          <th>{t("status")}</th>
+          <th>{t("lastUpdate")}</th>
         </tr>
       </thead>
       <tbody>

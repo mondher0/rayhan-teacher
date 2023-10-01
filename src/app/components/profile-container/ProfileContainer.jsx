@@ -1,16 +1,18 @@
 import "./profile-container.css";
 import profilePic from "../../atoms/assets/profile-pic.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ProfileContainer = () => {
+  const t = useTranslations("Index");
   return (
     <div className="profile-container">
-      <p className="profile-title">Profile Details</p>
+      <p className="profile-title">{t("profileDetails")}</p>
       <div className="profile-pictures">
         <div className="profile-img">
           <Image src={profilePic} width={250} height={250} />
           <p className="name">Mondher Mameri</p>
-          <p className="job">Teacher</p>
+          <p className="job">{t("teacher")}</p>
         </div>
         <iframe
           width="560"
@@ -26,31 +28,31 @@ const ProfileContainer = () => {
         <form>
           <div className="form-control">
             <div className="half-input">
-              <label htmlFor="first-name">First name</label>
+              <label htmlFor="first-name">{t("firstName")}</label>
               <input type="text" id="first-name" />
             </div>
             <div className="half-input">
-              <label htmlFor="last-name">Last name</label>
+              <label htmlFor="last-name">{t("lastName")}</label>
               <input type="text" id="last-name" />
             </div>
           </div>
           <div className="form-control">
             <div className="half-input">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t("email")}</label>
               <input type="text" id="email" />
             </div>
             <div className="half-input">
-              <label htmlFor="fonction">Fonction</label>
+              <label htmlFor="fonction">{t("fonction")}</label>
               <input type="text" id="fonction" />
             </div>
           </div>
           <div className="form-control">
             <div className="half-input">
-              <label htmlFor="percentage">Percentage</label>
+              <label htmlFor="percentage">{t("pourcentage")}</label>
               <input type="text" id="percentage" />
             </div>
             <div className="half-input">
-              <label htmlFor="permissions">Permissions</label>
+              <label htmlFor="permissions">{t("permissions")}</label>
               <input type="text" id="permissions" />
             </div>
           </div>

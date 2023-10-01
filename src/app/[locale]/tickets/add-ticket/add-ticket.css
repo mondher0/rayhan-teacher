@@ -77,3 +77,8 @@
   gap: 20px;
   width: 100%;
 }
+.btn-container-ar {
+
+  justify-content: flex-start;
+
+}

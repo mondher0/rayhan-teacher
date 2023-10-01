@@ -3,8 +3,10 @@ import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import "./students-number-chart.css";
+import { useTranslations } from "next-intl";
 
 const StudentsNumberChart = () => {
+  const t = useTranslations("Index");
   const chartRef = useRef(null);
   Chart.register(ChartDataLabels);
 
@@ -92,15 +94,15 @@ const StudentsNumberChart = () => {
   return (
     <div className="students-number-chart">
       <div className="chart-desc">
-        <p className="chart-title">Students number change per month</p>
+        <p className="chart-title">{t("Students number change per month")}</p>
         <div className="labels">
           <div className="applied">
             <div></div>
-            Applied
+            {t("applied")}
           </div>
           <div className="left">
             <div></div>
-            Left
+            {t("left")}
           </div>
         </div>
       </div>

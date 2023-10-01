@@ -1,16 +1,18 @@
 import "./table-component.css";
 import design from "../../atoms/assets/design.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const TableComponent = () => {
+  const t = useTranslations("Index");
   return (
     <table className="table">
       <thead>
         <tr>
-          <th>Course</th>
-          <th>Destination</th>
-          <th>Pricing</th>
-          <th>Date</th>
+          <th>{t("course")}</th>
+          <th>{t("destination")}</th>
+          <th>{t("price")}</th>
+          <th>{t("date")}</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +24,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>
@@ -38,7 +40,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>
@@ -54,7 +56,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>
@@ -70,7 +72,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>
@@ -86,7 +88,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>
@@ -102,7 +104,7 @@ const TableComponent = () => {
             </div>
           </td>
           <td>Takwin</td>
-          <td>11 000 DA</td>
+          <td>11000{t("dzd")}</td>
           <td>
             <div className="date">
               <p>10/03/2023</p>

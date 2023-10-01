@@ -22,12 +22,13 @@ import whiteNotification from "./white-notification.svg";
 import like from "./like.svg";
 import whiteLike from "./white-like.svg";
 import { usePathname } from "next/navigation"; // Import useRouter
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const SideBar = () => {
   const path = usePathname();
   console.log("-----------------router", path);
   const locale = useLocale();
+  const t = useTranslations("Index");
 
   // Define a function to check if a link is active
   const isActive = (href) => path === href;
@@ -42,7 +43,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/">Dashboard</Link>
+          <Link href="/">{t("dashboard")}</Link>
         </li>
         <li className={`link ${isActive(`/${locale}/lives`) ? "active" : ""}`}>
           <Image
@@ -52,7 +53,7 @@ const SideBar = () => {
             height={20}
             className="test"
           />
-          <Link href="/lives">Lives</Link>
+          <Link href="/lives">{t("lives")}</Link>
         </li>
         <li className={`link ${isActive(`/${locale}/rooms`) ? "active" : ""}`}>
           <Image
@@ -61,7 +62,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/rooms">Rooms</Link>
+          <Link href="/rooms">{t("rooms")}</Link>
         </li>
         <li
           className={`link ${
@@ -78,7 +79,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/notifications">Notifications</Link>
+          <Link href="/notifications">{t("notifications")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/feedbacks`) ? "active" : ""}`}
@@ -89,7 +90,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/feedbacks">Feedbacks</Link>
+          <Link href="/feedbacks">{t("feedbacks")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/tickets`) ? "active" : ""}`}
@@ -100,7 +101,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/tickets?page=1">Tickets</Link>
+          <Link href="/tickets?page=1">{t("tickets")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/payments`) ? "active" : ""}`}
@@ -111,7 +112,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/payments?page=1">Payment</Link>
+          <Link href="/payments?page=1">{t("payments")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/courses`) ? "active" : ""}`}
@@ -122,7 +123,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/courses?page=1">Courses</Link>
+          <Link href="/courses?page=1">{t("courses")}</Link>
         </li>
         <li
           className={`link ${isActive(`/${locale}/profile`) ? "active" : ""}`}
@@ -133,7 +134,7 @@ const SideBar = () => {
             width={20}
             height={20}
           />
-          <Link href="/profile">Profile</Link>
+          <Link href="/profile">{t("profile")}</Link>
         </li>
       </ul>
     </aside>

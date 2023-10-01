@@ -17,17 +17,25 @@ export default function DashboardPage() {
   return (
     <main>
       <div className="statistiques">
-        <StatistiqueContainer stat1={students} number="62" text="Students" />
-        <StatistiqueContainer stat1={balance} number="24000DZ" text="balance" />
+        <StatistiqueContainer
+          stat1={students}
+          number="62"
+          text={t("Students")}
+        />
+        <StatistiqueContainer
+          stat1={balance}
+          number="24000DZ"
+          text={t("balance")}
+        />
         <StatistiqueContainer
           stat1={averageMarks}
           number="6.8"
-          text="Average mark "
+          text={t("averageMark")}
         />
         <StatistiqueContainer
           stat1={under}
           number="8"
-          text="Underperforming students "
+          text={t("underperformingStudents")}
         />
       </div>
       <section className="charts">
@@ -37,18 +45,18 @@ export default function DashboardPage() {
             <StatistiqueContainer
               stat1={cup}
               number="62"
-              text="Lections left"
+              text={t("lectionsLeft")}
             />
             <StatistiqueContainer
               stat1={clock}
               number="139"
-              text="Hours spent on lections "
+              text={t("Hours spent on lections")}
             />
           </div>
         </div>
         <AverageMarks
-          text1="average marks"
-          text2="Descending"
+          text1={t("averageMark")}
+          text2={t("descending")}
           type="dashboard"
         />
         <StudentsBySex />

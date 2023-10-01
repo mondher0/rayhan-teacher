@@ -1,18 +1,27 @@
+"use client";
 import "./nav-bar.css";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import Image from "next/image";
 import avatar from "./avatar.svg";
 import keyBoardOpen from "./keyboardopen.svg";
+import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
+import LanguageChanger from "../language-changer/LanguageChanger";
 
 const NavBar = () => {
+  const t = useTranslations("Index");
+  const locale = useLocale();
+  const [showLanguage, setShowLanguage] = useState(false);
   return (
     <nav className="nav-bar">
       <div className="nav-btns login-nav">
-        <div className="user-info">
+        <div
+          className={locale === "ar" ? "user-info user-info-ar" : "user-info"}
+        >
           <div className="text">
             <p className="name">Mondher Mameri</p>
-            <p className="job">Teacher</p>
+            <p className="job">{t("teacher")}</p>
           </div>
           <div className="avatar hover">
             <Image src={avatar} alt="avatar" width={60} height={60} />
@@ -27,6 +36,17 @@ const NavBar = () => {
           color="#838E9E"
           className="hover"
         />
+        <div
+          onClick={() => {
+            setShowLanguage(!showLanguage);
+          }}
+        >
+          <LanguageChanger
+            setShowLanguage={setShowLanguage}
+            showLanguage={showLanguage}
+            setShowNotifications={setShowLanguage}
+          />
+        </div>
 
         <FiLogOut size={30} color="#838E9E" className="hover" />
       </div>

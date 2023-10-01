@@ -6,6 +6,9 @@
   padding: 20px;
   width: 100%;
 }
+single-notification-ar {
+  flex-direction: row-reverse;
+}
 .single-notification .not-text {
   display: flex;
   align-items: center;

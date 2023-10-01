@@ -3,16 +3,18 @@ import "../lives/lives.css";
 import InLivesRooms from "@/app/components/in-lives-rooms/InLivesRooms";
 import AverageMarks from "@/app/components/average-marks/AverageMarks";
 import openRoom from "../../atoms/assets/open-room.svg";
+import { useTranslations } from "next-intl";
 
 const RoomsPage = () => {
+  const t = useTranslations("Index");
   return (
     <main>
-      <OpenLiveRoom icon={openRoom} text="Open a Room Now" />
+      <OpenLiveRoom icon={openRoom} text={t("openNewRoom")} />
       <section className="lives">
-        <InLivesRooms text="In Room now" />
+        <InLivesRooms text={t("inRoomNow")} />
         <AverageMarks
-          text1="Participants"
-          text2="Approve all"
+          text1={t("participants")}
+          text2={t("acceptALl")}
           type="lives-rooms"
         />
       </section>

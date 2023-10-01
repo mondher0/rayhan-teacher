@@ -42,3 +42,6 @@ a {
   width: 100%;
   padding: 20px;
 }
+.teacher-container-ar {
+  direction: rtl;
+}

@@ -27,7 +27,13 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="teacher-container">
+          <div
+            className={
+              locale === "ar"
+                ? "teacher-container-ar teacher-container"
+                : "teacher-container"
+            }
+          >
             <SideBar />
             <div className="page-content">
               <NavBar />

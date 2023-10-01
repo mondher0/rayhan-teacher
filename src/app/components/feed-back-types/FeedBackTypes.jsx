@@ -7,8 +7,10 @@ import "../open-live-room/open-live-room.css";
 import Image from "next/image";
 import Cmnts from "../cmnts/Cmnts";
 import Reviews from "../reviews/Reviews";
+import { useTranslations } from "next-intl";
 
 const FeedBackTypes = () => {
+  const t = useTranslations("Index");
   const [comments, setComments] = useState("selected");
   const [reviews, setReviews] = useState();
   const style1 = {
@@ -42,7 +44,7 @@ const FeedBackTypes = () => {
             width={50}
             height={50}
           />
-          <p> Comments</p>
+          <p>{t("cmnts")}</p>
         </div>
         <div
           className="open-new hover"
@@ -55,7 +57,7 @@ const FeedBackTypes = () => {
             width={50}
             height={50}
           />
-          <p>Reviews</p>
+          <p>{t("reviews")}</p>
         </div>
       </div>
       {comments && <Cmnts />}

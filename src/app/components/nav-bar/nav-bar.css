@@ -11,6 +11,9 @@
   align-items: center;
   gap: 20px;
 }
+.login-nav .user-info-ar {
+  flex-direction: row-reverse;
+}
 .login-nav .user-info .text {
   display: flex;
   flex-direction: column;
