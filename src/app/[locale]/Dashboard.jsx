@@ -11,8 +11,8 @@ import cup from "../atoms/assets/cup.svg";
 
 const Dashboard = ({ userInfo }) => {
   const t = useTranslations("Index");
-  const { userable } = userInfo;
-  const { balance } = userable;
+  const { userable } = userInfo || {};
+  const { balance } = userable || {};
   return (
     <main>
       <div className="statistiques">
