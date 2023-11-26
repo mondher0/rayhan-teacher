@@ -11,6 +11,7 @@ export const getToken = () => {
 export const getUserInfo = async () => {
   try {
     const token = getToken();
+    if (!token) return null;
     const response = await fetch(`${baseUrl}/user/info`, {
       cache: "no-cache",
       headers: {
