@@ -10,7 +10,7 @@ import { useState } from "react";
 import LanguageChanger from "../language-changer/LanguageChanger";
 import useAuthContext from "@/app/hooks/useAuthContext";
 
-constNavBar = () => {
+const NavBar = () => {
   const t = useTranslations("Index");
   const locale = useLocale();
   const [showLanguage, setShowLanguage] = useState(false);

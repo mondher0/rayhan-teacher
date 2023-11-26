@@ -7,7 +7,6 @@ import AuthProvider from "@/context/AuthContext";
 
 const ChildLayout = ({ children, messages, locale }) => {
   const pathname = usePathname();
-  console.log(children);
   if (pathname.includes("login")) {
     return (
       <html lang={locale}>
