@@ -1,66 +1,8 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import students from "../atoms/assets/students.svg";
-import balance from "../atoms/assets/balance.svg";
-import averageMarks from "../atoms/assets/average-marks.svg";
-import under from "../atoms/assets/under.svg";
-import StatistiqueContainer from "../components/statistique-container/StatistiqueContainer";
-import "./dashboard.css";
-import StudentsNumberChart from "../components/students-number-chart/StudentsNumberChart";
-import AverageMarks from "../components/average-marks/AverageMarks";
-import StudentsBySex from "../components/students-by-sex/StudentsBySex";
-import clock from "../atoms/assets/clock.svg";
-import cup from "../atoms/assets/cup.svg";
+import { getUserInfo } from "@/utils/lib";
+import Dashboard from "./Dashboard";
 
-export default function DashboardPage() {
-  const t = useTranslations("Index");
-  return (
-    <main>
-      <div className="statistiques">
-        <StatistiqueContainer
-          stat1={students}
-          number="62"
-          text={t("Students")}
-        />
-        <StatistiqueContainer
-          stat1={balance}
-          number="24000DZ"
-          text={t("balance")}
-        />
-        <StatistiqueContainer
-          stat1={averageMarks}
-          number="6.8"
-          text={t("averageMark")}
-        />
-        <StatistiqueContainer
-          stat1={under}
-          number="8"
-          text={t("underperformingStudents")}
-        />
-      </div>
-      <section className="charts">
-        <div className="students-number">
-          <StudentsNumberChart />
-          <div className="statistiques">
-            <StatistiqueContainer
-              stat1={cup}
-              number="62"
-              text={t("lectionsLeft")}
-            />
-            <StatistiqueContainer
-              stat1={clock}
-              number="139"
-              text={t("Hours spent on lections")}
-            />
-          </div>
-        </div>
-        <AverageMarks
-          text1={t("averageMark")}
-          text2={t("descending")}
-          type="dashboard"
-        />
-        <StudentsBySex />
-      </section>
-    </main>
-  );
+export default async function DashboardPage() {
+  const userInfo = await getUserInfo();
+  console.log("--------------userInfo from DashboardPage", userInfo);
+  return <Dashboard userInfo={userInfo} />;
 }

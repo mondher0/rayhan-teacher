@@ -11,7 +11,7 @@
   padding: 20px;
 }
 .notifications-container-ar {
-direction: rtl;
+  direction: rtl;
 }
 .notification-container .notificatins-title {
   color: var(--gray-h-2);

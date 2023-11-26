@@ -1,14 +1,11 @@
-"use client";
 import "./globals.css";
 import { useLocale } from "next-intl";
-import { notFound, usePathname } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
-import SideBar from "../components/side-bar/SideBar";
-import NavBar from "../components/nav-bar/NavBar";
+import { notFound } from "next/navigation";
+import ChildLayout from "./childLayout";
+import { getUserInfo } from "@/utils/lib";
 
 export default async function RootLayout({ children, params }) {
   const locale = useLocale();
-  const path = usePathname();
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
@@ -19,37 +16,14 @@ export default async function RootLayout({ children, params }) {
   if (params.locale !== locale) {
     notFound();
   }
-  if (path.includes("login")) {
-    return (
-      <html lang={locale}>
-        <body>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </body>
-      </html>
-    );
-  }
-
+  const userInfo = await getUserInfo();
+  console.log("--------------userInfo from RootLayout", userInfo);
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <div
-            className={
-              locale === "ar"
-                ? "teacher-container-ar teacher-container"
-                : "teacher-container"
-            }
-          >
-            <SideBar />
-            <div className="page-content">
-              <NavBar />
-              {children}
-            </div>
-          </div>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <ChildLayout
+      children={children}
+      locale={locale}
+      messages={messages}
+      userInfo={userInfo}
+    />
   );
 }

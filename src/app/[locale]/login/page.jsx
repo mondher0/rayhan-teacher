@@ -3,26 +3,28 @@ import "./login.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import useAuthContext from "@/app/hooks/useAuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loader from "@/app/components/loader/Loader";
 
 const LoginPage = () => {
   const router = useRouter();
   const t = useTranslations("Auth");
   const locale = useLocale();
+  const { user, setUser, handleLogin, isLoading } = useAuthContext();
   return (
     <>
       <main className="main-form">
+        <ToastContainer />
         <div
           className={
             locale === "ar" ? "login-form login-form-ar" : "login-form"
           }
         >
-          <p
-            className="welcome"
-          >
-            {t("LoginDesc")}
-          </p>
+          <p className="welcome">{t("LoginDesc")}</p>
           <h1 className="title">{t("LoginTitle")}</h1>
-          <form>
+          <form onSubmit={handleLogin}>
             <div
               className={
                 locale === "ar"
@@ -30,8 +32,18 @@ const LoginPage = () => {
                   : "form-control"
               }
             >
-              <label htmlFor="phone-number">{t("loginPhoneNumber")}</label>
-              <input type="tel" id="phone-number" className="input-control" />
+              <label htmlFor="email">{t("loginPhoneNumber")}</label>
+              <input
+                type="email"
+                id="email"
+                className="input-control"
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    email: e.target.value,
+                  })
+                }
+              />
             </div>
             <div
               className={
@@ -40,11 +52,17 @@ const LoginPage = () => {
                   : "form-control"
               }
             >
-              <label htmlFor="phone-number">{t("loginPassword")}</label>
+              <label htmlFor="password">{t("loginPassword")}</label>
               <input
                 type="password"
-                id="phone-number"
+                id="password"
                 className="input-control"
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    password: e.target.value,
+                  })
+                }
               />
             </div>
             <div className={locale === "ar" ? "forgot forgot-ar" : "forgot"}>
@@ -62,7 +80,7 @@ const LoginPage = () => {
               </p>
             </div>
             <button className="form-control-btn hover" type="submit">
-              {t("loginBtn")}
+              {isLoading ? <Loader /> : t("loginBtn")}
             </button>
           </form>
         </div>

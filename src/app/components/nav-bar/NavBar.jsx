@@ -8,11 +8,15 @@ import keyBoardOpen from "./keyboardopen.svg";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import LanguageChanger from "../language-changer/LanguageChanger";
+import useAuthContext from "@/app/hooks/useAuthContext";
 
-const NavBar = () => {
+const NavBar = ({ userInfo }) => {
   const t = useTranslations("Index");
   const locale = useLocale();
   const [showLanguage, setShowLanguage] = useState(false);
+  console.log("--------------userInfo from NavBar", userInfo);
+  const { first_name, last_name } = userInfo;
+  const { handleLogout } = useAuthContext();
   return (
     <nav className="nav-bar">
       <div className="nav-btns login-nav">
@@ -20,7 +24,9 @@ const NavBar = () => {
           className={locale === "ar" ? "user-info user-info-ar" : "user-info"}
         >
           <div className="text">
-            <p className="name">Mondher Mameri</p>
+            <p className="name">
+              {first_name} {last_name}
+            </p>
             <p className="job">{t("teacher")}</p>
           </div>
           <div className="avatar hover">
@@ -48,7 +54,12 @@ const NavBar = () => {
           />
         </div>
 
-        <FiLogOut size={30} color="#838E9E" className="hover" />
+        <FiLogOut
+          size={30}
+          color="#838E9E"
+          className="hover"
+          onClick={handleLogout}
+        />
       </div>
     </nav>
   );

@@ -11,8 +11,8 @@ const NotificationsContainer = () => {
     <div
       className={
         locale === "ar"
-          ? "notifications-container-ar notifications-container"
-          : "notifications-container"
+          ? "notifications-container-ar notification-container"
+          : "notification-container"
       }
     >
       <p className="notificatins-title">{t("notifications")}</p>

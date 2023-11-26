@@ -1,5 +1,4 @@
 "use client";
-import NavBar from "@/app/components/nav-bar/NavBar";
 import "../login.css";
 import Image from "next/image";
 import { useState } from "react";
@@ -15,9 +14,6 @@ const ChangePassword = () => {
   const locale = useLocale();
   return (
     <>
-      <header>
-        <NavBar />
-      </header>
       <main className="main-form">
         {!succes ? (
           <div
@@ -57,7 +53,13 @@ const ChangePassword = () => {
                   className="input-control"
                 />
               </div>
-              <button className="form-control-btn hover" type="submit">
+              <button
+                className="form-control-btn hover"
+                type="submit"
+                onClick={() => {
+                  setSucces(true);
+                }}
+              >
                 {t("send")}
               </button>
             </form>
