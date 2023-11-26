@@ -17,13 +17,7 @@ export default async function RootLayout({ children, params }) {
     notFound();
   }
 
-  console.log("--------------userInfo from RootLayout", userInfo);
   return (
-    <ChildLayout
-      children={children}
-      locale={locale}
-      messages={messages}
-
-    />
+    <ChildLayout children={children} locale={locale} messages={messages} />
   );
 }
