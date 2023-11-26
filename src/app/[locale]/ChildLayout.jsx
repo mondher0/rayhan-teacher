@@ -6,7 +6,6 @@ import { NextIntlClientProvider } from "next-intl";
 import AuthProvider from "@/context/AuthContext";
 
 const ChildLayout = ({ children, messages, locale }) => {
-  console.log("--------------userinfo from child layout", userInfo);
   const pathname = usePathname();
   console.log(children);
   if (pathname.includes("login")) {
