@@ -4,7 +4,6 @@ import balancee from "../atoms/assets/balance.svg";
 import StatistiqueContainer from "../components/statistique-container/StatistiqueContainer";
 import "./dashboard.css";
 import StudentsNumberChart from "../components/students-number-chart/StudentsNumberChart";
-import AverageMarks from "../components/average-marks/AverageMarks";
 import StudentsBySex from "../components/students-by-sex/StudentsBySex";
 import clock from "../atoms/assets/clock.svg";
 import cup from "../atoms/assets/cup.svg";
