@@ -5,7 +5,7 @@ import NavBar from "../components/nav-bar/NavBar";
 import { NextIntlClientProvider } from "next-intl";
 import AuthProvider from "@/context/AuthContext";
 
-const ChildLayout = ({ children, messages, locale, userInfo }) => {
+const ChildLayout = ({ children, messages, locale }) => {
   console.log("--------------userinfo from child layout", userInfo);
   const pathname = usePathname();
   console.log(children);
@@ -35,7 +35,7 @@ const ChildLayout = ({ children, messages, locale, userInfo }) => {
             >
               <SideBar />
               <div className="page-content">
-                <NavBar userInfo={userInfo} />
+                <NavBar />
                 {children}
               </div>
             </div>

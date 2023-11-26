@@ -16,14 +16,14 @@ export default async function RootLayout({ children, params }) {
   if (params.locale !== locale) {
     notFound();
   }
-  const userInfo = await getUserInfo();
+
   console.log("--------------userInfo from RootLayout", userInfo);
   return (
     <ChildLayout
       children={children}
       locale={locale}
       messages={messages}
-      userInfo={userInfo}
+
     />
   );
 }

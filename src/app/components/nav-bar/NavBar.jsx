@@ -10,12 +10,10 @@ import { useState } from "react";
 import LanguageChanger from "../language-changer/LanguageChanger";
 import useAuthContext from "@/app/hooks/useAuthContext";
 
-const NavBar = ({ userInfo }) => {
+constNavBar = () => {
   const t = useTranslations("Index");
   const locale = useLocale();
   const [showLanguage, setShowLanguage] = useState(false);
-  console.log("--------------userInfo from NavBar", userInfo);
-  const { first_name, last_name } = userInfo;
   const { handleLogout } = useAuthContext();
   return (
     <nav className="nav-bar">
@@ -24,9 +22,7 @@ const NavBar = ({ userInfo }) => {
           className={locale === "ar" ? "user-info user-info-ar" : "user-info"}
         >
           <div className="text">
-            <p className="name">
-              {first_name} {last_name}
-            </p>
+            <p className="name">Mondher Mameri</p>
             <p className="job">{t("teacher")}</p>
           </div>
           <div className="avatar hover">
