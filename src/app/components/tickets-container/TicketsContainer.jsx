@@ -3,12 +3,11 @@ import AddBtn from "../add-btn/AddBtn";
 import TicketsTable from "../tickets-table/TicketsTable";
 import AddTicketModal from "../add-ticket-modal/AddTicketModal";
 
-const TicketsContainer = () => {
+const TicketsContainer = ({tickets}) => {
   return (
     <>
       <AddBtn />
-      <TicketsTable />
-
+      <TicketsTable tickets={tickets} />
     </>
   );
 };

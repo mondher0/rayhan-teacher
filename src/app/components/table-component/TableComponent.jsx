@@ -3,6 +3,7 @@ import "./table-component.css";
 import design from "../../atoms/assets/design.png";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { getLocalDate } from "@/utils/constants";
 
 const TableComponent = ({ courses }) => {
   const t = useTranslations("Index");
@@ -19,16 +20,9 @@ const TableComponent = ({ courses }) => {
       </thead>
       <tbody>
         {courses?.map((course) => {
-          const dateObj = new Date(course?.updated_at);
-
-          // Format the Date object to the desired format
-          const formattedDate = `${("0" + dateObj.getDate()).slice(-2)}/${(
-            "0" +
-            (dateObj.getMonth() + 1)
-          ).slice(-2)}/${dateObj.getFullYear().toString().slice(-2)}`;
-          const formattedTime = `${("0" + dateObj.getHours()).slice(-2)}:${(
-            "0" + dateObj.getMinutes()
-          ).slice(-2)}`;
+          const { formattedDate, formattedTime } = getLocalDate(
+            course?.updated_at,
+          );
           return (
             <tr key={course.id}>
               <td>

@@ -1,10 +1,9 @@
+import { getLocalDate } from "@/utils/constants";
 import "../table-component/table-component.css";
-import design from "../../atoms/assets/design.png";
-import Image from "next/image";
 import "./tickets-table.css";
 import { useTranslations } from "next-intl";
 
-const TicketsTable = () => {
+const TicketsTable = ({ tickets }) => {
   const t = useTranslations("Index");
   return (
     <table className="table">
@@ -17,156 +16,33 @@ const TicketsTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className="course-title">
-              <Image src={design} width={50} height={50} />
-              Admin
-            </div>
-          </td>
-          <td>
-            <div className="objet">
-              <p className="text">
-                Reclamation about payement and every single student
-              </p>
-              <p className="type">urgent</p>
-            </div>
-          </td>
-          <td>
-            <div className="status">Fermé</div>
-          </td>
-          <td>
-            <div className="date">
-              <p>10/03/2023</p>
-              <p>19:30</p>
-            </div>
-          </td>
-        </tr>
+        {tickets?.map((ticket) => {
+          const { formattedDate, formattedTime } = getLocalDate(
+            ticket?.updated_at,
+          );
+          return (
+            <tr key={ticket?.id}>
+              <td>
+                <div className="course-title">Admin</div>
+              </td>
+              <td>
+                <div className="objet">
+                  <p className="text">{ticket?.subject}</p>
+                  <p className="type">{ticket?.importance}</p>
+                </div>
+              </td>
+              <td>
+                <div className="status">{ticket?.status}</div>
+              </td>
+              <td>
+                <div className="date">
+                  <p>{formattedDate}</p>
+                  <p>{formattedTime}</p>
+                </div>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
