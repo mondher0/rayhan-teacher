@@ -37,9 +37,13 @@ const TicketsPage = async ({ searchParams }) => {
 
   return (
     <main>
-      <TicketsContainer tickets={tickets?.data}/>
+      <TicketsContainer tickets={tickets?.data} />
       <section className="pagination-bar">
-        <Pagination currentPage={page} url="/tickets" totalPage={tickets?.last_page}/>
+        <Pagination
+          currentPage={page}
+          url="/tickets"
+          totalPage={tickets?.last_page}
+        />
       </section>
     </main>
   );

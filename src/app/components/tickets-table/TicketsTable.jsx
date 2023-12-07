@@ -1,10 +1,13 @@
+"use client";
 import { getLocalDate } from "@/utils/constants";
 import "../table-component/table-component.css";
 import "./tickets-table.css";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 const TicketsTable = ({ tickets }) => {
   const t = useTranslations("Index");
+  const router = useRouter();
   return (
     <table className="table">
       <thead>
@@ -21,7 +24,11 @@ const TicketsTable = ({ tickets }) => {
             ticket?.updated_at,
           );
           return (
-            <tr key={ticket?.id}>
+            <tr
+              className="hover"
+              key={ticket?.id}
+              onClick={() => router.push(`/tickets/${ticket?.id}`)}
+            >
               <td>
                 <div className="course-title">Admin</div>
               </td>
