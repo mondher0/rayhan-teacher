@@ -10,10 +10,13 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "@/app/components/loader/Loader";
+import ReplayModel from "./ReplayModel";
 
 const TicketsDetailsNavBar = ({ id }) => {
   const router = useRouter();
   const [isLoading, setIsloading] = useState();
+  const [open, setOpen] = useState(false);
+  const onClose = () => setOpen(false);
 
   // close ticket
   const closeTicket = async () => {
@@ -45,7 +48,7 @@ const TicketsDetailsNavBar = ({ id }) => {
           <button
             className="close hover"
             onClick={closeTicket}
-            style={isLoading && { padding: "3px 32px" }}
+            style={isLoading ? { padding: "3px 32px" } : {}}
           >
             {isLoading ? (
               <Loader size={20} />
@@ -55,12 +58,13 @@ const TicketsDetailsNavBar = ({ id }) => {
               </>
             )}
           </button>
-          <button className="reply hover">
+          <button className="reply hover" onClick={() => setOpen(true)}>
             <CgMailReply size={20} />
             Reply
           </button>
         </div>
       </div>
+      <ReplayModel open={open} onClose={onClose} id={id} />
     </>
   );
 };

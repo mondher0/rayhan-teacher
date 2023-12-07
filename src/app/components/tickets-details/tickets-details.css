@@ -1,8 +1,17 @@
+.tickets-details-container {
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
 .tickets-details-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+}
+.discussion-container {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
 }
 .back-btn {
   display: inline-flex;
@@ -36,6 +45,13 @@
   gap: 10px;
   border: none;
   color: white;
+}
+.reply-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 .details {
   display: flex;

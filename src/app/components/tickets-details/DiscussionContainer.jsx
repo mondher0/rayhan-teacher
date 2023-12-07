@@ -8,7 +8,12 @@ const DiscussionContainer = ({ date, content, replier }) => {
   console.log("from replier", replier);
   const { formattedDate, formattedTime } = getLocalDate(date);
   const { user } = replier || {};
+  console.log(
+    "------------------this is user from DiscussionContainer",
+    replier,
+  );
   const { first_name, last_name } = user || {};
+  content = { __html: content };
   return (
     <div className="discussion-container">
       <div className="header">
@@ -25,7 +30,7 @@ const DiscussionContainer = ({ date, content, replier }) => {
         </div>
       </div>
       <div className="content">
-        <p>{content}</p>
+        <p dangerouslySetInnerHTML={content}></p>
       </div>
     </div>
   );
