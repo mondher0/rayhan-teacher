@@ -65,37 +65,39 @@ const ReplayModel = ({ open, onClose, id }) => {
       toast.error("Something went wrong");
     }
   };
-  return (
-    <>
-      <ToastContainer />
-      <Popup open={open} onClose={onClose} position="right center">
-        <form onSubmit={handleSubmit}>
-          <ReactQuill
-            theme="snow"
-            value={value}
-            onChange={setValue}
-            modules={modules}
-            formats={formats}
-          />
-          <div className="reply-modal">
-            <button
-              className="reply hover"
-              type="submit"
-              style={
-                isLoading
-                  ? {
-                      padding: "3px 32px",
-                    }
-                  : {}
-              }
-            >
-              {isLoading ? <Loader /> : "Reply"}
-            </button>
-          </div>
-        </form>
-      </Popup>
-    </>
-  );
+  if (typeof document && document != undefined) {
+    return (
+      <>
+        <ToastContainer />
+        <Popup open={open} onClose={onClose} position="right center">
+          <form onSubmit={handleSubmit}>
+            <ReactQuill
+              theme="snow"
+              value={value}
+              onChange={setValue}
+              modules={modules}
+              formats={formats}
+            />
+            <div className="reply-modal">
+              <button
+                className="reply hover"
+                type="submit"
+                style={
+                  isLoading
+                    ? {
+                        padding: "3px 32px",
+                      }
+                    : {}
+                }
+              >
+                {isLoading ? <Loader /> : "Reply"}
+              </button>
+            </div>
+          </form>
+        </Popup>
+      </>
+    );
+  }
 };
 
 export default ReplayModel;
