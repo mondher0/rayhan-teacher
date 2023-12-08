@@ -15,7 +15,7 @@ export default function Error({ error, reset }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        height: "70vh",
       }}
     >
       <h2>Something went wrong!</h2>

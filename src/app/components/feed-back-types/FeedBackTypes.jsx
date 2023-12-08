@@ -9,7 +9,7 @@ import Cmnts from "../cmnts/Cmnts";
 import Reviews from "../reviews/Reviews";
 import { useTranslations } from "next-intl";
 
-const FeedBackTypes = ({ coursesComments }) => {
+const FeedBackTypes = ({ coursesComments, profileComments }) => {
   const t = useTranslations("Index");
   const [comments, setComments] = useState("selected");
   const [reviews, setReviews] = useState();
@@ -61,7 +61,7 @@ const FeedBackTypes = ({ coursesComments }) => {
         </div>
       </div>
       {comments && <Cmnts coursesComments={coursesComments} />}
-      {reviews && <Reviews />}
+      {reviews && <Reviews profileComments={profileComments} />}
     </div>
   );
 };

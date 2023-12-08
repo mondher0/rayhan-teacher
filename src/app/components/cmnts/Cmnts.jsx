@@ -40,11 +40,7 @@ const Cmnts = ({ coursesComments }) => {
       <p className="notificatins-title">{t("comments")}</p>
       {comments?.map((courseComment) => {
         return (
-          <SingleCmnt
-            time={t("twoMinutesAgo")}
-            key={courseComment?.id}
-            courseComment={courseComment}
-          />
+          <SingleCmnt key={courseComment?.id} courseComment={courseComment} />
         );
       })}
       {!finish ? (

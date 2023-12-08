@@ -3,7 +3,6 @@ import "../single-notification/single-notification.css";
 import smsNot from "../../atoms/assets/sms-not.svg";
 import Image from "next/image";
 import { getLocalDate } from "@/utils/constants";
-import { LinearScale } from "chart.js";
 
 const SingleCmnt = ({ time, courseComment }) => {
   const { content, created_at, student, commentable } = courseComment || {};
