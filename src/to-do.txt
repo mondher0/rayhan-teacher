@@ -7,3 +7,4 @@ payment not integrates yet
 courses not integrated course details yet 
 profile not integrate edit user info yet
 protecting routes
+updates of ui note done yet 
