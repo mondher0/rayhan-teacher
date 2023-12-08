@@ -1,4 +1,5 @@
-{"Index": {
+{
+  "Index": {
     "dashboard": "Tableau de bord",
     "lives": "En direct",
     "rooms": "Salles",
@@ -31,7 +32,7 @@
     "inRoomNow": "Dans la salle actuellement",
     "twoMinutesAgo": "Il y a deux minutes",
     "reviews": "Critiques",
-    "comments": "Commentaires",
+    "comments": "Cours",
     "subject": "Sujet",
     "status": "Statut",
     "lastUpdate": "Dernière mise à jour",
@@ -105,5 +106,5 @@
     "thirdYear": "Troisième année",
     "fourthYear": "Quatrième année",
     "fifthYear": "Cinquième année"
-}
+  }
 }

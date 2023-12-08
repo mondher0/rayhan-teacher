@@ -1,10 +1,17 @@
+import { getCoursesComments } from "./actions";
 import "./feedbacks.css";
 import FeedBackTypes from "@/app/components/feed-back-types/FeedBackTypes";
 
-const FeedbacksPage = () => {
+const FeedbacksPage = async () => {
+  const coursesComments = await getCoursesComments(1);
+  console.log("helloooooooo");
+  console.log(
+    "------------------courses comments---------------------",
+    coursesComments,
+  );
   return (
     <main>
-      <FeedBackTypes />
+      <FeedBackTypes coursesComments={coursesComments?.data?.data} />
     </main>
   );
 };

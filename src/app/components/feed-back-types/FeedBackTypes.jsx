@@ -9,7 +9,7 @@ import Cmnts from "../cmnts/Cmnts";
 import Reviews from "../reviews/Reviews";
 import { useTranslations } from "next-intl";
 
-const FeedBackTypes = () => {
+const FeedBackTypes = ({ coursesComments }) => {
   const t = useTranslations("Index");
   const [comments, setComments] = useState("selected");
   const [reviews, setReviews] = useState();
@@ -44,7 +44,7 @@ const FeedBackTypes = () => {
             width={50}
             height={50}
           />
-          <p>{t("cmnts")}</p>
+          <p>{t("comments")}</p>
         </div>
         <div
           className="open-new hover"
@@ -60,7 +60,7 @@ const FeedBackTypes = () => {
           <p>{t("reviews")}</p>
         </div>
       </div>
-      {comments && <Cmnts />}
+      {comments && <Cmnts coursesComments={coursesComments} />}
       {reviews && <Reviews />}
     </div>
   );

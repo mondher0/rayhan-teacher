@@ -21,3 +21,10 @@
   line-height: 32px; /* 133.333% */
   letter-spacing: -0.288px;
 }
+.loader-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
