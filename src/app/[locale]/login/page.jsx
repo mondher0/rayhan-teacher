@@ -22,6 +22,15 @@ const LoginPage = () => {
             locale === "ar" ? "login-form login-form-ar" : "login-form"
           }
         >
+          <div className="login-logo">
+            <Image
+              src="/images/login-logo.svg"
+              alt="login"
+              width={171}
+              height={166}
+              className="login-logo"
+            />
+          </div>
           <p className="welcome">{t("LoginDesc")}</p>
           <h1 className="title">{t("LoginTitle")}</h1>
           <form onSubmit={handleLogin}>

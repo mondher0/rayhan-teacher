@@ -7,6 +7,7 @@ import StudentsNumberChart from "../components/students-number-chart/StudentsNum
 import StudentsBySex from "../components/students-by-sex/StudentsBySex";
 import clock from "../atoms/assets/clock.svg";
 import cup from "../atoms/assets/cup.svg";
+import SailedCourse from "../components/sailed-course/SailedCourse";
 
 const Dashboard = ({ userInfo }) => {
   const t = useTranslations("Index");
@@ -29,17 +30,10 @@ const Dashboard = ({ userInfo }) => {
       <section className="charts">
         <div className="students-number">
           <StudentsNumberChart />
+          <p className="top">Top sailed courses</p>
           <div className="statistiques">
-            <StatistiqueContainer
-              stat1={cup}
-              number="62"
-              text={t("lectionsLeft")}
-            />
-            <StatistiqueContainer
-              stat1={clock}
-              number="139"
-              text={t("Hours spent on lections")}
-            />
+            <SailedCourse />
+            <SailedCourse />
           </div>
         </div>
         <StudentsBySex />

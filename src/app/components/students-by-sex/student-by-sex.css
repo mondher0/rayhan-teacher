@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  width: 100%;
 }
 .student-by-sex .student-by-sex-title {
   color: #000;

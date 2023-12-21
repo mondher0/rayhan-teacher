@@ -1,0 +1,66 @@
+.statistique-container-course {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #fff;
+  padding: 0;
+  gap: 20px;
+  width: 48%;
+}
+.statistique-container-course .stat-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.statistique-container-course .stat-desc .stat-number-course {
+  color: #2b2b2b;
+  font-family: "Lexend";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.374px;
+}
+.statistique-container-course .stat-desc .stat-text {
+  color: #a6acbe;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+@media screen and (max-width: 1400px) {
+  .statistique-container-course {
+    width: 48%;
+  }
+  .statistique-container-course img {
+    width: 100%;
+  }
+  .statistique-container-course .stat-desc .stat-number-course {
+    font-size: 16px;
+  }
+}
+.price {
+  color: #243752;
+  text-align: right;
+  font-size: 14.04px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20.28px; /* 144.444% */
+  border-radius: 3.12px;
+  background: #e6e8ec;
+  display: flex;
+  padding: 3.12px 12.48px;
+  align-items: center;
+  gap: 6.24px;
+}
+.course-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 5px;
+  flex-wrap: wrap;
+}

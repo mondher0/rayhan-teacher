@@ -5,6 +5,17 @@ main {
   justify-content: center;
   gap: 40px;
 }
+.top {
+  color: #000;
+
+  /* Heading/5 */
+  font-family: "Lexend";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 125% */
+  letter-spacing: -0.48px;
+}
 .statistiques {
   display: flex;
   flex-direction: row;
@@ -21,7 +32,7 @@ main {
   align-items: flex-start;
   justify-content: center;
   gap: 20px;
-  height: 569px;
+  height: 744px;
 }
 .charts {
   display: flex;
@@ -31,4 +42,19 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+@media (max-width: 1388px) and (min-width: 1283px) {
+  .students-number {
+    width: 600px;
+  }
+}
+@media (max-width: 1282px) and (min-width: 1177px) {
+  .students-number {
+    width: 500px;
+  }
+}
+@media (max-width: 1176px) and (min-width: 1071px) {
+  .students-number {
+    width: 400px;
+  }
 }

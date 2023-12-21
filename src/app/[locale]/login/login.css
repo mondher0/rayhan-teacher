@@ -5,6 +5,13 @@
   justify-content: space-evenly;
   overflow: hidden;
   margin-bottom: 40px;
+  /* height: 100vh; */
+}
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .login-form {
   display: flex;
@@ -17,7 +24,7 @@
   align-items: flex-end;
 }
 .login-form .welcome {
-  color: #12224F;
+  color: #12224f;
   font-size: 24.603px;
   font-style: normal;
   font-weight: 400;
@@ -28,7 +35,7 @@
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  color: #12224F;
+  color: #12224f;
   margin-bottom: 0;
 }
 .login-form .form-control {

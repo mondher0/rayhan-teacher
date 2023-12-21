@@ -3,6 +3,7 @@ import avatar from "../nav-bar/avatar.svg";
 import Image from "next/image";
 import "./tickets-details.css";
 import { getLocalDate } from "@/utils/constants";
+import "./style.css";
 
 const DiscussionContainer = ({ date, content, replier }) => {
   console.log("from replier", replier);
@@ -29,8 +30,13 @@ const DiscussionContainer = ({ date, content, replier }) => {
           </p>
         </div>
       </div>
-      <div className="content">
-        <p dangerouslySetInnerHTML={content}></p>
+      <div
+        className="content"
+      >
+        <p
+          dangerouslySetInnerHTML={content}
+          className="danger"
+        ></p>
       </div>
     </div>
   );

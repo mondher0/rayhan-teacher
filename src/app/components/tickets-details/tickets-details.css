@@ -74,6 +74,7 @@
   padding: 20px;
   max-height: 250px;
   overflow-y: auto;
+  width: 633px;
 }
 .content p {
   color: #243752;
