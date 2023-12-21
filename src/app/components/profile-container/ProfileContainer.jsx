@@ -68,7 +68,7 @@ const ProfileContainer = ({ userInfo }) => {
             </div>
             <div className="half-input">
               <label htmlFor="permissions">{t("permissions")}</label>
-              <input type="text" id="permissions" />
+              <input type="text" id="permissions" disabled />
             </div>
           </div>
         </form>
