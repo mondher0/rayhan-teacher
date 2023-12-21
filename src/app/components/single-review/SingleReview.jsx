@@ -4,7 +4,9 @@ import { AiFillStar } from "react-icons/ai";
 import Image from "next/image";
 import reviewIcon from "../../atoms/assets/review-icon.svg";
 
-const SingleReview = ({ numberOfStars, review }) => {
+const SingleReview = ({ review }) => {
+  const { content, stars } = review || {};
+  const numberOfStars = Array(parseInt(stars) || 0).fill(0);
   return (
     <div className="single-notification">
       <div className="not-text">
@@ -14,10 +16,12 @@ const SingleReview = ({ numberOfStars, review }) => {
           width={30}
           height={30}
         />
-        <p className="not">{review}</p>
+        <p className="not">{content}</p>
       </div>
       <div className="stars">
-        {Array(numberOfStars).fill(<AiFillStar color="#FFC107" size={30} />)}
+        {numberOfStars.map((index) => (
+          <AiFillStar size={30} color="#FFD700" key={index} />
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client";
 import { useTranslations } from "next-intl";
 import "../notifications-container/notifications-container.css";
 import SingleReview from "../single-review/SingleReview";
@@ -39,11 +40,7 @@ const Reviews = ({ profileComments }) => {
       <p className="notificatins-title">{t("reviews")}</p>
       {comments?.map((profileComment) => {
         return (
-          <SingleReview
-            review="from AYA ABDELBASSET in Javascript course"
-            numberOfStars={5}
-            key={profileComment?.id}
-          />
+          <SingleReview review={profileComment} key={profileComment?.id} />
         );
       })}
       {!finish ? (
