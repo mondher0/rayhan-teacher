@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "@/app/components/loader/Loader";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const AddTicketPage = () => {
   const t = useTranslations("Index");
@@ -16,6 +18,37 @@ const AddTicketPage = () => {
   const [service, setService] = useState("");
   const [importance, setImportance] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const formats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "video",
+  ];
+  const modules = {
+    toolbar: [
+      [{ header: "1" }, { header: "2" }, { font: [] }],
+      [{ size: [] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image", "video"],
+      ["clean"],
+    ],
+  };
 
   // get services
   const getService = async () => {
@@ -94,12 +127,20 @@ const AddTicketPage = () => {
           </div>
           <div className="input-control">
             <label htmlFor="message">{t("message")}</label>
-            <textarea
-              id="message"
-              cols={40}
-              rows={10}
-              onChange={(e) => setContent(e.target.value)}
-            ></textarea>
+            <div
+              style={{
+                width: "100%",
+              }}
+            >
+              <ReactQuill
+                theme="snow"
+                value={content}
+                onChange={setContent}
+                modules={modules}
+                formats={formats}
+                style={{ width: "100%" }}
+              />
+            </div>
           </div>
           <div
             className={
@@ -107,6 +148,15 @@ const AddTicketPage = () => {
                 ? "btn-container-ar btn-container"
                 : "btn-container"
             }
+          ></div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              width: "100%",
+              marginTop: "20px",
+            }}
           >
             <button className="btn">
               {isLoading ? <Loader /> : t("send")}
