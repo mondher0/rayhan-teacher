@@ -1,24 +1,25 @@
+"use client";
 import { useTranslations } from "next-intl";
-import students from "../atoms/assets/students.svg";
+import studentss from "../atoms/assets/students.svg";
 import balancee from "../atoms/assets/balance.svg";
 import StatistiqueContainer from "../components/statistique-container/StatistiqueContainer";
 import "./dashboard.css";
 import StudentsNumberChart from "../components/students-number-chart/StudentsNumberChart";
 import StudentsBySex from "../components/students-by-sex/StudentsBySex";
-import clock from "../atoms/assets/clock.svg";
-import cup from "../atoms/assets/cup.svg";
 import SailedCourse from "../components/sailed-course/SailedCourse";
 
-const Dashboard = ({ userInfo }) => {
+const Dashboard = ({ generalStat, charts, topSailedCourses }) => {
   const t = useTranslations("Index");
-  const { userable } = userInfo || {};
-  const { balance } = userable || {};
+  const { balance, students } = generalStat || {};
+  const { incomes } = charts || {};
+  console.log("--------------generalStat from Dashboard", generalStat);
+  console.log("--------------charts from Dashboard", incomes);
   return (
     <main>
       <div className="statistiques">
         <StatistiqueContainer
-          stat1={students}
-          number="62"
+          stat1={studentss}
+          number={students}
           text={t("Students")}
         />
         <StatistiqueContainer
@@ -29,11 +30,12 @@ const Dashboard = ({ userInfo }) => {
       </div>
       <section className="charts">
         <div className="students-number">
-          <StudentsNumberChart />
+          <StudentsNumberChart incomes={incomes} />
           <p className="top">Top sailed courses</p>
           <div className="statistiques">
-            <SailedCourse />
-            <SailedCourse />
+            {topSailedCourses?.slice(0, 2).map((course, index) => (
+              <SailedCourse key={index} course={course} />
+            ))}
           </div>
         </div>
         <StudentsBySex />

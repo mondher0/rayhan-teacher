@@ -5,7 +5,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import "./students-number-chart.css";
 import { useTranslations } from "next-intl";
 
-const StudentsNumberChart = () => {
+const StudentsNumberChart = ({ incomes }) => {
   const t = useTranslations("Index");
   const chartRef = useRef(null);
   Chart.register(ChartDataLabels);
@@ -29,23 +29,23 @@ const StudentsNumberChart = () => {
         ],
         datasets: [
           {
-            label: "Solde professeurs",
+            label: "incomes",
             backgroundColor: ["#6F52ED"],
             borderColor: ["rgba(255, 255, 255, 0)"],
             borderWidth: 5,
             borderRadius: 7,
-            data: [70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70],
+            data: incomes,
             borderSkipped: false,
           },
-          {
-            label: "Solde plateforme",
-            backgroundColor: ["#FF7A00"],
-            borderColor: ["rgba(255, 255, 255, 0)"],
-            borderWidth: 5,
-            borderRadius: 7,
-            data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-            borderSkipped: false,
-          },
+          // {
+          //   label: "Solde plateforme",
+          //   backgroundColor: ["#FF7A00"],
+          //   borderColor: ["rgba(255, 255, 255, 0)"],
+          //   borderWidth: 5,
+          //   borderRadius: 7,
+          //   data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+          //   borderSkipped: false,
+          // },
         ],
       };
 
@@ -95,7 +95,7 @@ const StudentsNumberChart = () => {
     <div className="students-number-chart">
       <div className="chart-desc">
         <p className="chart-title">{t("Students number change per month")}</p>
-        <div className="labels">
+        {/* <div className="labels">
           <div className="applied">
             <div></div>
             {t("applied")}
@@ -104,7 +104,7 @@ const StudentsNumberChart = () => {
             <div></div>
             {t("left")}
           </div>
-        </div>
+        </div> */}
       </div>
       <canvas ref={chartRef} />
     </div>
