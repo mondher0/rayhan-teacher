@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 
 const ProfileContainer = ({ userInfo }) => {
   const t = useTranslations("Index");
-  const { first_name, last_name, email, userable } = userInfo;
+  const { first_name, last_name, email, userable, image } = userInfo || {};
+  console.log(image);
   const { percentage } = userable || {};
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -23,7 +24,12 @@ const ProfileContainer = ({ userInfo }) => {
       <p className="profile-title">{t("profileDetails")}</p>
       <div className="profile-pictures">
         <div className="profile-img">
-          <Image src={profilePic} width={250} height={250} />
+          <Image
+            src={image || profilePic}
+            width={250}
+            height={250}
+            alt={first_name + " " + last_name}
+          />
           <p className="name">
             {first_name} {last_name}
           </p>
@@ -44,27 +50,47 @@ const ProfileContainer = ({ userInfo }) => {
           <div className="form-control">
             <div className="half-input">
               <label htmlFor="first-name">{t("firstName")}</label>
-              <input type="text" id="first-name" value={user.first_name} />
+              <input
+                type="text"
+                id="first-name"
+                value={user.first_name}
+                disabled
+              />
             </div>
             <div className="half-input">
               <label htmlFor="last-name">{t("lastName")}</label>
-              <input type="text" id="last-name" value={user.last_name} />
+              <input
+                type="text"
+                id="last-name"
+                value={user.last_name}
+                disabled
+              />
             </div>
           </div>
           <div className="form-control">
             <div className="half-input">
               <label htmlFor="email">{t("email")}</label>
-              <input type="text" id="email" value={user.email} />
+              <input type="text" id="email" value={user.email} disabled />
             </div>
             <div className="half-input">
               <label htmlFor="fonction">{t("fonction")}</label>
-              <input type="text" id="fonction" value={userable?.function} />
+              <input
+                type="text"
+                id="fonction"
+                value={userable?.function}
+                disabled
+              />
             </div>
           </div>
           <div className="form-control">
             <div className="half-input">
               <label htmlFor="percentage">{t("pourcentage")}</label>
-              <input type="text" id="percentage" value={percentage} />
+              <input
+                type="text"
+                id="percentage"
+                value={percentage + "%"}
+                disabled
+              />
             </div>
             <div className="half-input">
               <label htmlFor="permissions">{t("permissions")}</label>
