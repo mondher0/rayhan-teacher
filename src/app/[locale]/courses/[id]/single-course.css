@@ -1,0 +1,14 @@
+.titre {
+  color: #4b465c;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+}
+.single-course-container {
+  padding: 24px;
+}
+.course-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

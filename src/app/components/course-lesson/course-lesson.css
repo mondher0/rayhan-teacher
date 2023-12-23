@@ -1,0 +1,22 @@
+.course-lesson {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
+}
+.course-lesson span .title {
+  color: #243752;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+}
+.course-lesson span .content-details {
+  color: #838e9e;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}

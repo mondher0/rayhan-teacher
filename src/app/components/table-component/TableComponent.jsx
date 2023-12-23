@@ -1,13 +1,13 @@
 "use client";
 import "./table-component.css";
-import design from "../../atoms/assets/design.png";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { getLocalDate } from "@/utils/constants";
+import { useRouter } from "next/navigation";
 
 const TableComponent = ({ courses }) => {
   const t = useTranslations("Index");
   console.log("--------------courses from TableComponent", courses);
+  const router = useRouter();
   return (
     <table className="table">
       <thead>
@@ -24,7 +24,13 @@ const TableComponent = ({ courses }) => {
             course?.updated_at,
           );
           return (
-            <tr key={course.id}>
+            <tr
+              className="hover"
+              key={course.id}
+              onClick={() => {
+                router.push(`/courses/${course?.id}`);
+              }}
+            >
               <td>
                 <div className="course-title">{course?.title}</div>
               </td>
