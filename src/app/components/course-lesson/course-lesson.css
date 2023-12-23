@@ -6,6 +6,7 @@
   padding: 24px;
   border-radius: 16px;
   background: #fff;
+  width: 100%;
 }
 .course-lesson span .title {
   color: #243752;

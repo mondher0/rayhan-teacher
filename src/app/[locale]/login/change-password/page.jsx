@@ -6,12 +6,16 @@ import "./change-password.css";
 import checkCircle from "./check-circle.svg";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import useAuthContext from "@/app/hooks/useAuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loader from "@/app/components/loader/Loader";
 
 const ChangePassword = () => {
-  const [succes, setSucces] = useState(false);
   const router = useRouter();
   const t = useTranslations("Auth");
   const locale = useLocale();
+  const { user, setUser, resetPassword, isLoading, succes } = useAuthContext();
   return (
     <>
       <main className="main-form">
@@ -21,10 +25,20 @@ const ChangePassword = () => {
               locale === "ar" ? "login-form login-form-ar" : "login-form"
             }
           >
+            <ToastContainer />
+            <div className="login-logo">
+              <Image
+                src="/images/login-logo.svg"
+                alt="login"
+                width={171}
+                height={166}
+                className="login-logo"
+              />
+            </div>
             <h1 className="title">{t("resetPassword")}</h1>
             <p className="welcome">{t("chooseNewPassword")}</p>
 
-            <form>
+            <form onSubmit={resetPassword}>
               <div
                 className={
                   locale === "ar"
@@ -37,6 +51,12 @@ const ChangePassword = () => {
                   type="password"
                   id="phone-number"
                   className="input-control"
+                  onChange={(e) =>
+                    setUser({
+                      ...user,
+                      password: e.target.value,
+                    })
+                  }
                 />
               </div>
               <div
@@ -51,16 +71,16 @@ const ChangePassword = () => {
                   type="password"
                   id="phone-number"
                   className="input-control"
+                  onChange={(e) =>
+                    setUser({
+                      ...user,
+                      password_confirmation: e.target.value,
+                    })
+                  }
                 />
               </div>
-              <button
-                className="form-control-btn hover"
-                type="submit"
-                onClick={() => {
-                  setSucces(true);
-                }}
-              >
-                {t("send")}
+              <button className="form-control-btn hover" type="submit">
+                {isLoading ? <Loader /> : t("send")}
               </button>
             </form>
           </div>
