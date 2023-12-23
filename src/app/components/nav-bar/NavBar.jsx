@@ -9,12 +9,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import LanguageChanger from "../language-changer/LanguageChanger";
 import useAuthContext from "@/app/hooks/useAuthContext";
+import { useRouter } from "next/navigation";
 
 const NavBar = () => {
   const t = useTranslations("Index");
   const locale = useLocale();
   const [showLanguage, setShowLanguage] = useState(false);
   const { handleLogout } = useAuthContext();
+  const router = useRouter();
   return (
     <nav className="nav-bar">
       <div className="nav-btns login-nav">
@@ -37,6 +39,9 @@ const NavBar = () => {
           size={40}
           color="#838E9E"
           className="hover"
+          onClick={() => {
+            router.push("/notifications");
+          }}
         />
         <div
           onClick={() => {
