@@ -5,7 +5,8 @@ import { IoStarSharp } from "react-icons/io5";
 
 const SailedCourse = ({ course }) => {
   const { title, total_rate, comments_count } = course || {};
-  const numberofStars = Array(total_rate || 0).fill(0);
+  console.log(total_rate);
+  const numberofStars = Array(parseInt(total_rate) || 0).fill(0);
   console.log("--------------course from SailedCourse", course);
   return (
     <div className="statistique-container-course">
