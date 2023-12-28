@@ -6,10 +6,12 @@ import Image from "next/image";
 import avatar from "./avatar.svg";
 import keyBoardOpen from "./keyboardopen.svg";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LanguageChanger from "../language-changer/LanguageChanger";
 import useAuthContext from "@/app/hooks/useAuthContext";
 import { useRouter } from "next/navigation";
+import { getCookie } from "cookies-next";
+import { baseUrl } from "@/utils/constants";
 
 const NavBar = () => {
   const t = useTranslations("Index");
@@ -17,6 +19,34 @@ const NavBar = () => {
   const [showLanguage, setShowLanguage] = useState(false);
   const { handleLogout } = useAuthContext();
   const router = useRouter();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  // get user info
+  const getUserInfo = async () => {
+    try {
+      const token = getCookie("token");
+      console.log("--------------token from getUserInfo", token);
+      if (!token) return null;
+      const response = await fetch(`${baseUrl}/user/info`, {
+        cache: "no-cache",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const userInfo = await response.json();
+      console.log("--------------userInfo from getUserInfo", userInfo);
+      setLastName(userInfo.last_name);
+      setFirstName(userInfo.first_name);
+    } catch (error) {
+      console.log("--------------error from getUserInfo", error);
+      throw new Error(error);
+    }
+  };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
   return (
     <nav className="nav-bar">
       <div className="nav-btns login-nav">
@@ -24,7 +54,9 @@ const NavBar = () => {
           className={locale === "ar" ? "user-info user-info-ar" : "user-info"}
         >
           <div className="text">
-            <p className="name">Mondher Mameri</p>
+            <p className="name">
+              {firstName} {lastName}
+            </p>
             <p className="job">{t("teacher")}</p>
           </div>
           <div className="avatar hover">
