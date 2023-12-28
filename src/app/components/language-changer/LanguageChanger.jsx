@@ -8,7 +8,7 @@ import downArrow from "./down-arrow.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const LanguageChanger = ({ setShowLanguage, showLanguage }) => {
+const LanguageChanger = ({ setShowLanguage, showLanguage, pathName }) => {
   const locale = useLocale();
   const path = usePathname();
   console.log("-----------path-----------", path);
@@ -35,19 +35,19 @@ const LanguageChanger = ({ setShowLanguage, showLanguage }) => {
       />
       {showLanguage && (
         <div className="languages">
-          <Link href="/en" locale="en">
+          <Link href={pathName === "/login" ? "/en/login" : "/en"} locale="en">
             <div className="language">
               <Image src={usa} alt="usa" width={30} height={30} />
               <p className="current-language">EN</p>
             </div>
           </Link>
-          <Link href="/ar" locale="ar">
+          <Link href={pathName === "/login" ? "/ar/login" : "/ar"} locale="ar">
             <div className="language">
               <Image src={dz} alt="usa" width={30} height={30} />
               <p className="current-language">AR</p>
             </div>
           </Link>
-          <Link href="/fr" locale="fr">
+          <Link href={pathName === "/login" ? "/fr/login" : "/fr"} locale="fr">
             <div className="language">
               <Image src={fr} alt="usa" width={30} height={30} />
               <p className="current-language">FR</p>

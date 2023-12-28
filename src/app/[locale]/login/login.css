@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   overflow: hidden;
   margin-bottom: 40px;
+  background: var(--Primary-h-4, #ddfff8);
   /* height: 100vh; */
 }
 .login-logo {

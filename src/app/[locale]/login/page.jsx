@@ -7,14 +7,32 @@ import useAuthContext from "@/app/hooks/useAuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "@/app/components/loader/Loader";
+import LanguageChanger from "@/app/components/language-changer/LanguageChanger";
+import { useState } from "react";
 
 const LoginPage = () => {
   const router = useRouter();
   const t = useTranslations("Auth");
   const locale = useLocale();
   const { user, setUser, handleLogin, isLoading } = useAuthContext();
+  const [showLanguage, setShowLanguage] = useState(false);
   return (
     <>
+      <nav
+        className="nav-bar"
+        style={{
+          background: "#DDFFF8",
+          paddingBottom: "0",
+        }}
+      >
+        <div className="nav-btns login-nav">
+          <LanguageChanger
+            showLanguage={showLanguage}
+            setShowLanguage={setShowLanguage}
+            pathName="/login"
+          />
+        </div>
+      </nav>
       <main className="main-form">
         <ToastContainer />
         <div
