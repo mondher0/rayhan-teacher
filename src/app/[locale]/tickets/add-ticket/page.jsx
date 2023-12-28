@@ -18,6 +18,7 @@ const AddTicketPage = () => {
   const [service, setService] = useState("");
   const [importance, setImportance] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const importances = ["normal", "urgent", "important", "four"];
   const formats = [
     "header",
     "font",
@@ -117,12 +118,18 @@ const AddTicketPage = () => {
             </div>
             <div className="input-control">
               <label htmlFor="importance">{t("importance")}</label>
-              <input
-                type="text"
+              <select
                 name="importance"
                 id="importance"
                 onChange={(e) => setImportance(e.target.value)}
-              />
+              >
+                <option>Choose importance</option>
+                {importances.map((importance) => (
+                  <option key={importance} value={importance}>
+                    {importance}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="input-control">
